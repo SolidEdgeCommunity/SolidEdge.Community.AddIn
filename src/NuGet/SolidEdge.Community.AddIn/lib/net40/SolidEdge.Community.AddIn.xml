@@ -1,0 +1,764 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SolidEdge.Community.AddIn</name>
+    </assembly>
+    <members>
+        <member name="P:SolidEdgeCommunity.AddIn.EdgeBarControl.ToolTip">
+            <summary>
+            The string to be used in the EdgeBarPage caption and tooltip.
+            </summary>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.EdgeBarController">
+            <summary>
+            EdgeBar controller class.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.EdgeBarController.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.EdgeBarController.AdviseSink``1(System.Object)">
+            <summary>
+            Establishes a connection between a connection point object and the client's sink.
+            </summary>
+            <typeparam name="TInterface">Interface type of the outgoing interface whose connection point object is being requested.</typeparam>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.EdgeBarController.IsSinkAdvised``1(System.Object)">
+            <summary>
+            Determines if a connection between a connection point object and the client's sink is established.
+            </summary>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.EdgeBarController.UnadviseSink``1(System.Object)">
+            <summary>
+            Terminates an advisory connection previously established between a connection point object and a client's sink.
+            </summary>
+            <typeparam name="TInterface">Interface type of the interface whose connection point object is being requested to be removed.</typeparam>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.EdgeBarController.UnadviseAllSinks">
+            <summary>
+            Terminates all advisory connections previously established.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.EdgeBarController.UpdateSink``1(System.Object,System.Boolean)">
+            <summary>
+            Establishes or terminates a connection between a connection point object and the client's sink.
+            </summary>
+            <typeparam name="TInterface">Interface type of the interface whose connection point object is being requested to be updated.</typeparam>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+            <param name="advise">Flag indicating whether to advise or unadvise.</param>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.EdgeBarController.EdgeBarPages">
+            <summary>
+            Enumerable collection of EdgeBarPage objects.
+            </summary>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.NativeResourceAttribute">
+            <summary>
+            Defines a resource file (.bmp | .png) to be embedded as a native Win32 resource at compile time.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.NativeResourceAttribute.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+            <param name="id">Unique resource ID.</param>
+            <param name="path">Path to resource file (.bmp | .png) relative to project.</param>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.RegistrationSettings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.Ribbon">
+            <summary>
+            Abstract base class for ribbon.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.Ribbon.AddTab(System.String)">
+            <summary>
+            Adds a new ribbon tab.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.Ribbon.GetButton(System.Int32)">
+            <summary>
+            Returns a button by id.
+            </summary>
+            <param name="commandId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.Ribbon.GetCheckBox(System.Int32)">
+            <summary>
+            Returns a checkbox by id.
+            </summary>
+            <param name="commandId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.Ribbon.GetControl``1(System.Int32)">
+            <summary>
+            Returns a RibbonControl by id.
+            </summary>
+            <typeparam name="TRibbonControl"></typeparam>
+            <param name="commandId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.Ribbon.GetRadioButton(System.Int32)">
+            <summary>
+            Returns a radio button by id.
+            </summary>
+            <param name="commandId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.Ribbon.LoadXml(System.String)">
+            <summary>
+            Loads ribbon xml from the specified string.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.Ribbon.LoadXml(System.Reflection.Assembly,System.String)">
+            <summary>
+            Loads ribbon xml from an embedded resource in the specified assembly.
+            </summary>
+            <param name="assembly"></param>
+            <param name="resourceName"></param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.Ribbon.OnControlClick(SolidEdgeCommunity.AddIn.RibbonControl)">
+            <summary>
+            Called when a user clicks a ribbon control.
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.Ribbon.Buttons">
+            <summary>
+            Returns all RibbonButton controls assigned to the ribbon.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.Ribbon.CheckBoxes">
+            <summary>
+            Returns all RibbonCheckBox controls assigned to the ribbon.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.Ribbon.Controls">
+            <summary>
+            Returns all controls assigned to the ribbon.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.Ribbon.RadioButtons">
+            <summary>
+            Returns all RibbonRadioButton controls assigned to the ribbon.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.Ribbon.Item(System.Int32)">
+            <summary>
+            Returns a RibbonControl by id.
+            </summary>
+            <param name="commandId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.Ribbon.Tabs">
+            <summary>
+            Returns an enumerable collection of ribbon tabs.
+            </summary>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.RibbonControl">
+            <summary>
+            Abstract base class for all ribbon controls.
+            </summary>
+        </member>
+        <member name="E:SolidEdgeCommunity.AddIn.RibbonControl.Click">
+            <summary>
+            Raised when a user clicks the control.
+            </summary>
+        </member>
+        <member name="E:SolidEdgeCommunity.AddIn.RibbonControl.Help">
+            <summary>
+            Raised when user requests help for the control.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.Checked">
+            <summary>
+            Gets or set a value indicating whether the control is in the checked state.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.CommandId">
+            <summary>
+            Gets the command id of the control.
+            </summary>
+            <remarks>
+            This is the command id used by OnCommand SolidEdgeFramework.AddInEvents.
+            </remarks>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.CommandName">
+            <summary>
+            Returns the generated command name used when calling SetAddInInfo().
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.Enabled">
+            <summary>
+            Gets or set a value indicating whether the control is enabled.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.Group">
+            <summary>
+            Gets ribbon group that the control is assigned to.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.ImageId">
+            <summary>
+            Gets or set a value referencing an image embedded into the assembly as a native resource using the NativeResourceAttribute.
+            </summary>
+            <remarks>
+            Changing this value after the ribbon has been initialized has no impact.
+            </remarks>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.Label">
+            <summary>
+            Gets or set a value indicating the label (caption) of the control.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.Macro">
+            <summary>
+            Gets or set a value indicating a macro (.exe) assigned to the control.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.MacroParameters">
+            <summary>
+            Gets or set a value indicating the macro (.exe) parameters assigned to the control.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.ScreenTip">
+            <summary>
+            Gets or set a value indicating screentip of the control.
+            </summary>
+            <remarks>
+            Changing this value after the ribbon has been initialized has no impact.
+            </remarks>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.ShowImage">
+            <summary>
+            Gets or set a value indicating whether to show the image assigned to the control.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.ShowLabel">
+            <summary>
+            Gets or set a value indicating whether to show the label (caption) assigned to the control.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.SolidEdgeCommandId">
+            <summary>
+            Gets the Solid Edge assigned runtime command id of the control.
+            </summary>
+            <remarks>
+            This is the command id used by the BeforeCommand and AfterCommand SolidEdgeFramework.ApplicationEvents. 
+            You also use this command id when calling SolidEdgeFramework.Application.StartCommand().
+            </remarks>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonControl.SuperTip">
+            <summary>
+            Gets or set a value indicating the supertip of the control.
+            </summary>
+            <remarks>
+            Changing this value after the ribbon has been initialized has no impact.
+            </remarks>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.RibbonButton">
+            <summary>
+            Ribbon button control class.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonButton.Size">
+            <summary>
+            Gets or sets the size of the control.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonButton.Style">
+            <summary>
+            Returns the control style.
+            </summary>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.RibbonCheckBox">
+            <summary>
+            Ribbon checkbox control class.
+            </summary>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.RibbonRadioButton">
+            <summary>
+            Ribbon radio button control class.
+            </summary>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.RibbonButtonSize">
+            <summary>
+            Ribbon button sizes.
+            </summary>
+        </member>
+        <member name="F:SolidEdgeCommunity.AddIn.RibbonButtonSize.Normal">
+            <summary>
+            Standard size button.
+            </summary>
+        </member>
+        <member name="F:SolidEdgeCommunity.AddIn.RibbonButtonSize.Large">
+            <summary>
+            Large size button.
+            </summary>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.RibbonController">
+            <summary>
+            Controller class for working with ribbons.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.RibbonController.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.RibbonController.Add``1(System.Guid,System.Boolean)">
+            <summary>
+            Adds a ribbon to the specified environment.
+            </summary>
+            <typeparam name="TRibbon"></typeparam>
+            <param name="environmentCategory"></param>
+            <param name="firstTime"></param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.RibbonController.Add(SolidEdgeCommunity.AddIn.Ribbon,System.Guid,System.Boolean)">
+            <summary>
+            Adds a ribbon to the specified environment.
+            </summary>
+            <param name="ribbon"></param>
+            <param name="environmentCategory"></param>
+            <param name="firstTime"></param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.RibbonController.Dispose">
+            <summary>
+            Disposes resources.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.RibbonController.AdviseSink``1(System.Object)">
+            <summary>
+            Establishes a connection between a connection point object and the client's sink.
+            </summary>
+            <typeparam name="TInterface">Interface type of the outgoing interface whose connection point object is being requested.</typeparam>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.RibbonController.IsSinkAdvised``1(System.Object)">
+            <summary>
+            Determines if a connection between a connection point object and the client's sink is established.
+            </summary>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.RibbonController.UnadviseSink``1(System.Object)">
+            <summary>
+            Terminates an advisory connection previously established between a connection point object and a client's sink.
+            </summary>
+            <typeparam name="TInterface">Interface type of the interface whose connection point object is being requested to be removed.</typeparam>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.RibbonController.UnadviseAllSinks">
+            <summary>
+            Terminates all advisory connections previously established.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.RibbonController.UpdateSink``1(System.Object,System.Boolean)">
+            <summary>
+            Establishes or terminates a connection between a connection point object and the client's sink.
+            </summary>
+            <typeparam name="TInterface">Interface type of the interface whose connection point object is being requested to be updated.</typeparam>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+            <param name="advise">Flag indicating whether to advise or unadvise.</param>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonController.ActiveRibbon">
+            <summary>
+            Returns the ribbon for the current environment.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.RibbonController.Ribbons">
+            <summary>
+            Returns an enumerable collection of ribbons.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.#ctor">
+            <summary>
+            Public constructor
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.OnCreateRibbon(SolidEdgeCommunity.AddIn.RibbonController,System.Guid,System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.OnCreateEdgeBarPage(SolidEdgeCommunity.AddIn.EdgeBarController,SolidEdgeFramework.SolidEdgeDocument)">
+            <summary>
+            
+            </summary>
+            <param name="controller"></param>
+            <param name="document"></param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.OnConnection(SolidEdgeFramework.Application,SolidEdgeFramework.SeConnectMode,SolidEdgeFramework.AddIn)">
+            <summary>
+            Called by SolidEdgeFramework.ISolidEdgeAddIn.OnConnection().
+            </summary>
+            <param name="application"></param>
+            <param name="ConnectMode"></param>
+            <param name="AddInInstance"></param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.OnConnectToEnvironment(SolidEdgeFramework.Environment,System.Boolean)">
+            <summary>
+            Called by SolidEdgeFramework.ISolidEdgeAddIn.OnConnectToEnvironment().
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.OnDisconnection(SolidEdgeFramework.SeDisconnectMode)">
+            <summary>
+            Called by SolidEdgeFramework.ISolidEdgeAddIn.OnDisconnection().
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.InitializeLifetimeService">
+            <summary>
+            Implementation of MarshalByRefObject.InitializeLifetimeService(). Not intended to be called directly.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.Register(SolidEdgeCommunity.AddIn.RegistrationSettings)">
+            <summary>
+            Registers the addin.
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.Register(System.Type,System.String,System.String,System.Guid[])">
+            <summary>
+            Registers the addin.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.Register(System.Type,System.String,System.String,System.Boolean,System.Guid[])">
+            <summary>
+            Registers the addin.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.Unregister(System.Type)">
+            <summary>
+            Deletes the HKEY_CLASSES_ROOT\CLSID\{ADDIN_GUID} key.
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.CreateBaseKey(System.Guid)">
+            <summary>
+            Creates or opens base registry key for addin.
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.RegisterEnvironments(System.Type,System.Guid[])">
+            <summary>
+            Registers the environments that the addin is subscribed to.
+            </summary>
+            <param name="t"></param>
+            <param name="environments"></param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.RegisterImplementedCategories(System.Type,System.Guid[])">
+            <summary>
+            Registers the implemented categories of the addin.
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.RegisterOptions(System.Type,System.Boolean)">
+            <summary>
+            Registers the addin options.
+            </summary>
+            <param name="t"></param>
+            <param name="autoConnect"></param>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.NativeResourcesDllPath">
+            <summary>
+            Returns the path of the .dll\.exe containing native Win32 resources. Typically the current assembly location.
+            </summary>
+            <remarks>
+            It is only necessary to override if you have native resources in a separate .dll.
+            </remarks>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.Application">
+            <summary>
+            Returns an instance of SolidEdgeFramework.Application.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.ApplicationEvents">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEApplicationEvents_Event.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.ApplicationWindowEvents">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEApplicationWindowEvents_Event.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.AddIn">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEAddIn.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.AddInEvents">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEAddInEvents_Event;
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.AddInEx">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEAddInEx.
+            </summary>
+            <remarks>Available in Solid Edge V20 or greater.</remarks>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.AddInEx2">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEAddIn.
+            </summary>
+            <remarks>Available in Solid Edge ST7 or greater.</remarks>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.EdgeBar">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISolidEdgeBar.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.EdgeBarEx">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISolidEdgeBarEx.
+            </summary>
+            <remarks>Available in Solid Edge V20 or greater.</remarks>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.EdgeBarEx2">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISolidEdgeBarEx2.
+            </summary>
+            <remarks>Available in Solid Edge ST6 or greater.</remarks>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.EdgeBarController">
+            <summary>
+            Returns an instance of EdgeBarController.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.FeatureLibraryEvents">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEFeatureLibraryEvents_Event.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.FileUIEvents">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEFileUIEvents_Event.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.Guid">
+            <summary>
+            Returns the GUID of the AddIn.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.GuiVersion">
+            <summary>
+            Returns the version of the GUI for the AddIn.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.Instance">
+            <summary>
+            Returns a global static instance of the addin.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.NewFileUIEvents">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISENewFileUIEvents_Event.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.SEECEvents">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEECEvents_Event.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.ShortcutMenuEvents">
+            <summary>
+            Returns an instance of SolidEdgeFramework.ISEShortCutMenuEvents_Event.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.SolidEdgeVersion">
+            <summary>
+            Returns the Solid Edge application version.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.ViewOverlayController">
+            <summary>
+            Returns an instance of the ViewOverlayController.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.SolidEdgeAddIn.RibbonController">
+            <summary>
+            Returns an instance of RibbonController.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.Changed">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEViewEvents.Changed event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.Destroyed">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEViewEvents.Destroyed event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.StyleChanged">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEViewEvents.StyleChanged event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.BeginOpenGLDisplay">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEIGLDisplayEvents.BeginDisplay event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.BeginOpenGLMainDisplay(SolidEdgeSDK.IGL)">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEIGLDisplayEvents.BeginIGLMainDisplay event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.EndOpenGLDisplay">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEIGLDisplayEvents.EndDisplay event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.EndOpenGLMainDisplay(System.Object)">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEIGLDisplayEvents.EndIGLMainDisplay event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.BeginDeviceContextDisplay">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEhDCDisplayEvents.BeginDisplay event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.BeginDeviceContextMainDisplay(System.IntPtr,System.Double@,System.Int32@)">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEhDCDisplayEvents.BeginhDCMainDisplay event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.EndDeviceContextDisplay">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEhDCDisplayEvents.EndDisplay event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.EndDeviceContextMainDisplay(System.IntPtr,System.Double@,System.Int32@)">
+            <summary>
+            Raised by the SolidEdgeFramework.ISEhDCDisplayEvents.EndhDCMainDisplay event.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.AdviseSink``1(System.Object)">
+            <summary>
+            Establishes a connection between a connection point object and the client's sink.
+            </summary>
+            <typeparam name="TInterface">Interface type of the outgoing interface whose connection point object is being requested.</typeparam>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.IsSinkAdvised``1(System.Object)">
+            <summary>
+            Determines if a connection between a connection point object and the client's sink is established.
+            </summary>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.UnadviseSink``1(System.Object)">
+            <summary>
+            Terminates an advisory connection previously established between a connection point object and a client's sink.
+            </summary>
+            <typeparam name="TInterface">Interface type of the interface whose connection point object is being requested to be removed.</typeparam>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.UnadviseAllSinks">
+            <summary>
+            Terminates all advisory connections previously established.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlay.UpdateSink``1(System.Object,System.Boolean)">
+            <summary>
+            Establishes or terminates a connection between a connection point object and the client's sink.
+            </summary>
+            <typeparam name="TInterface">Interface type of the interface whose connection point object is being requested to be updated.</typeparam>
+            <param name="container">An object that implements the IConnectionPointContainer inferface.</param>
+            <param name="advise">Flag indicating whether to advise or unadvise.</param>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.ViewOverlay.View">
+            <summary>
+            The SolidEdgeFramework.View assigned to this overlay.
+            </summary>
+        </member>
+        <member name="T:SolidEdgeCommunity.AddIn.ViewOverlayController">
+            <summary>
+            View overlay controller class.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.Add(SolidEdgeFramework.View,SolidEdgeCommunity.AddIn.ViewOverlay)">
+            <summary>
+            Adds an overlay to the specified view.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.Add(SolidEdgeFramework.Window,SolidEdgeCommunity.AddIn.ViewOverlay)">
+            <summary>
+            Adds an overlay to the specified window.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.Add``1(SolidEdgeFramework.View)">
+            <summary>
+            Adds an overlay to the specified view.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.Add``1(SolidEdgeFramework.Window)">
+            <summary>
+            Adds an overlay to the specified window.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.GetOverlay(SolidEdgeFramework.View)">
+            <summary>
+            Gets the overlay for the specified view.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.GetOverlay(SolidEdgeFramework.Window)">
+            <summary>
+            Gets the overlay for the specified window.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.HasOverlay(SolidEdgeFramework.View)">
+            <summary>
+            Determines if the specified view has an overlay.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.HasOverlay(SolidEdgeFramework.Window)">
+            <summary>
+            Determines if the specified window has an overlay.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.Remove(SolidEdgeCommunity.AddIn.ViewOverlay)">
+            <summary>
+            Removes the specified overlay.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.RemoveAll">
+            <summary>
+            Removes all overlays.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.RemoveAll(SolidEdgeFramework.Window)">
+            <summary>
+            Removes all overlays for the specified window.
+            </summary>
+        </member>
+        <member name="M:SolidEdgeCommunity.AddIn.ViewOverlayController.RemoveAll(SolidEdgeFramework.View)">
+            <summary>
+            Removes all overlays for the specified view.
+            </summary>
+        </member>
+        <member name="P:SolidEdgeCommunity.AddIn.ViewOverlayController.Overlays">
+            <summary>
+            Returns an IEnumerable of all overlays.
+            </summary>
+        </member>
+    </members>
+</doc>

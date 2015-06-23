@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SolidEdge.Community.AddIn</id>
+        <version>107.6.0</version>
+        <title>SolidEdge.Community.AddIn</title>
+        <authors>Jason Newell</authors>
+        <owners>Jason Newell</owners>
+        <licenseUrl>https://github.com/SolidEdgeCommunity/SolidEdge.Community/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/SolidEdgeCommunity/SolidEdge.Community</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/SolidEdgeCommunity/SolidEdge.Community/master/media/icon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Community provided package for developing Solid Edge AddIns.</description>
+        <summary />
+        <releaseNotes>Initial release.</releaseNotes>
+        <language>en-US</language>
+        <tags>interop solidedge community contrib</tags>
+        <dependencies>
+            <dependency id="Interop.SolidEdge" version="107.6.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="build\net40\SolidEdge.Community.AddIn.targets" target="build\net40\SolidEdge.Community.AddIn.targets" />
+        <file src="lib\net40\SolidEdge.Community.AddIn.dll" target="lib\net40\SolidEdge.Community.AddIn.dll" />
+        <file src="lib\net40\SolidEdge.Community.AddIn.xml" target="lib\net40\SolidEdge.Community.AddIn.xml" />
+        <file src="tools\net40\EmbedNativeResources.exe" target="tools\net40\EmbedNativeResources.exe" />
+        <file src="tools\init.ps1" target="tools\init.ps1" />
+        <file src="tools\install.ps1" target="tools\install.ps1" />
+        <file src="tools\Ribbon.xsd" target="tools\Ribbon.xsd" />
+        <file src="tools\SolidEdge.Community.AddIn.psm1" target="tools\SolidEdge.Community.AddIn.psm1" />
+        <file src="tools\uninstall.ps1" target="tools\uninstall.ps1" />
+    </files>
+</package>
