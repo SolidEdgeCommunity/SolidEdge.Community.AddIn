@@ -1,5 +1,4 @@
 ﻿using Microsoft.Win32;
-//using SolidEdgeCommunity.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
