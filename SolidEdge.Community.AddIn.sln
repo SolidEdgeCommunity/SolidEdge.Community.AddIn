@@ -1,13 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidEdge.Community.AddIn", "src\SolidEdge.Community.AddIn\SolidEdge.Community.AddIn.csproj", "{3BFB94CD-C10E-4E0F-8DC5-98259E6E1B77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAddIn", "src\TestAddIn\TestAddIn.csproj", "{FF8BF735-430C-4DE9-81FB-ABC1FA3DC8C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbedNativeResources", "src\EmbedNativeResources\EmbedNativeResources.csproj", "{7C0C237E-933F-4428-889B-BBCDBC2958AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F14801A7-FDB1-4024-95E2-73E59CB69477}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
