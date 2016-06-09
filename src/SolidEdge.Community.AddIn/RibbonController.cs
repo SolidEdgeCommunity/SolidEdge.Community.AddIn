@@ -104,6 +104,18 @@ namespace SolidEdgeCommunity.AddIn
 
         void SolidEdgeFramework.ISEAddInEventsEx.OnCommandOnLineHelp(int HelpCommandID, int CommandID, out string HelpURL)
         {
+            var ribbon = ActiveRibbon;
+
+            if (ribbon != null)
+            {
+                var control = ribbon.Controls.FirstOrDefault(x => x.CommandId == CommandID);
+
+                if (control != null)
+                {
+                    HelpURL = control.WebHelpURL;
+                    return;
+                }
+            }
             HelpURL = null;
         }
 
