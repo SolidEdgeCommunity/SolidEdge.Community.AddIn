@@ -40,6 +40,7 @@ namespace SolidEdgeCommunity.AddIn
         private bool _showLabel = true;
         private int _solidEdgeCommandId = -1;
         private string _superTip;
+        private string _webHelpURL;
 
         internal RibbonControl(int commandId)
         {
@@ -145,6 +146,11 @@ namespace SolidEdgeCommunity.AddIn
         /// Changing this value after the ribbon has been initialized has no impact.
         /// </remarks>
         public string SuperTip { get { return _superTip; } set { _superTip = value; } }
+
+        /// <summary>
+        /// Gets or set the telp URL that is shown in the browser if the user asks for help by using the F1 key.
+        /// </summary>
+        public string WebHelpURL { get { return _webHelpURL; } set { _webHelpURL = value; } }
 
         #endregion
 
