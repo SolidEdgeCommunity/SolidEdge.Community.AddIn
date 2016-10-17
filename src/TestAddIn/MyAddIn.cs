@@ -55,7 +55,7 @@ namespace TestAddIn
         public override void OnCreateEdgeBarPage(EdgeBarController controller, SolidEdgeFramework.SolidEdgeDocument document)
         {
             controller.Add<MyEdgeBarControl>(document, 1);
-            //controller.Add<MyEdgeBarControl2>(document, 1);
+            controller.Add<MyEdgeBarControl2>(document, 1);
         }
 
         #region Registration functions

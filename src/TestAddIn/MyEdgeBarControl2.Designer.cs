@@ -45,8 +45,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Caption = "My Caption 2";
             this.Controls.Add(this.button1);
             this.Name = "MyEdgeBarControl2";
+            this.Title = "My Title 2";
+            this.ToolTip = "My Tooltip 2";
             this.AfterInitialize += new System.EventHandler(this.MyEdgeBarControl2_AfterInitialize);
             this.Load += new System.EventHandler(this.MyEdgeBarControl2_Load);
             this.ResumeLayout(false);

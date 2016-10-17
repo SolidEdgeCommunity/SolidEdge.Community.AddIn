@@ -240,6 +240,7 @@ namespace SolidEdgeCommunity.AddIn
     /// </summary>
     public class RibbonButton : RibbonControl
     {
+        private string _dropDownGroup;
         private RibbonButtonSize _size = RibbonButtonSize.Normal;
 
         internal RibbonButton(int id)
@@ -253,6 +254,15 @@ namespace SolidEdgeCommunity.AddIn
             {
                 _size = size.Equals("large", StringComparison.OrdinalIgnoreCase) == true ? RibbonButtonSize.Large : RibbonButtonSize.Normal;
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string DropDownGroup
+        {
+            get { return _dropDownGroup; }
+            set { _dropDownGroup = value; }
         }
 
         /// <summary>

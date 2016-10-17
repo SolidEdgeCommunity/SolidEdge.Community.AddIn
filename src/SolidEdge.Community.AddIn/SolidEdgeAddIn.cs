@@ -168,17 +168,31 @@ namespace SolidEdgeCommunity.AddIn
         {
         }
 
+        ///// <summary>
+        ///// Called during SolidEdgeFramework.ISEAddInEdgeBarEventsEx.AddPage() event.
+        ///// </summary>
+        ///// <param name="controller"></param>
+        ///// <remarks>
+        ///// Use this override for creating EdgeBar pages that are not document specific.
+        ///// </remarks>
+        //public virtual void OnCreateEdgeBarPage(EdgeBarController controller)
+        //{
+        //}
+
         /// <summary>
-        /// 
+        /// Called during SolidEdgeFramework.ISEAddInEdgeBarEventsEx.AddPage() event.
         /// </summary>
         /// <param name="controller"></param>
         /// <param name="document"></param>
+        /// <remarks>
+        /// Use this override for creating EdgeBar pages that are document specific.
+        /// </remarks>
         public virtual void OnCreateEdgeBarPage(EdgeBarController controller, SolidEdgeFramework.SolidEdgeDocument document)
         {
         }
 
         /// <summary>
-        /// Called by SolidEdgeFramework.ISolidEdgeAddIn.OnConnection().
+        /// Called during SolidEdgeFramework.ISolidEdgeAddIn.OnConnection().
         /// </summary>
         /// <param name="application"></param>
         /// <param name="ConnectMode"></param>
@@ -188,14 +202,14 @@ namespace SolidEdgeCommunity.AddIn
         }
 
         /// <summary>
-        /// Called by SolidEdgeFramework.ISolidEdgeAddIn.OnConnectToEnvironment().
+        /// Called during SolidEdgeFramework.ISolidEdgeAddIn.OnConnectToEnvironment().
         /// </summary>
         public virtual void OnConnectToEnvironment(SolidEdgeFramework.Environment environment, bool firstTime)
         {
         }
 
         /// <summary>
-        /// Called by SolidEdgeFramework.ISolidEdgeAddIn.OnDisconnection().
+        /// Called during SolidEdgeFramework.ISolidEdgeAddIn.OnDisconnection().
         /// </summary>
         public virtual void OnDisconnection(SolidEdgeFramework.SeDisconnectMode DisconnectMode)
         {

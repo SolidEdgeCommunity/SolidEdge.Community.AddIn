@@ -217,8 +217,25 @@ namespace SolidEdgeCommunity.AddIn
                         // Note: The command will not be added if it the name is not unique!
                         commandName.AppendFormat("{0}_{1}", _addIn.Guid.ToString(), control.CommandId);
 
-                        // Now append the description, tooltip, etc separated by \n.
-                        commandName.AppendFormat("\n{0}\n{1}\n{2}", control.Label, control.SuperTip, control.ScreenTip);
+                        if (control is RibbonButton)
+                        {
+                            var ribbonButton = control as RibbonButton;
+                            if (String.IsNullOrEmpty(ribbonButton.DropDownGroup) == false)
+                            {
+                                // Now append the description, tooltip, etc separated by \n.
+                                commandName.AppendFormat("\n{0}\\\\{1}\n{2}\n{3}", ribbonButton.DropDownGroup, control.Label, control.SuperTip, control.ScreenTip);
+                            }
+                            else
+                            {
+                                // Now append the description, tooltip, etc separated by \n.
+                                commandName.AppendFormat("\n{0}\n{1}\n{2}", control.Label, control.SuperTip, control.ScreenTip);
+                            }
+                        }
+                        else
+                        {
+                            // Now append the description, tooltip, etc separated by \n.
+                            commandName.AppendFormat("\n{0}\n{1}\n{2}", control.Label, control.SuperTip, control.ScreenTip);
+                        }
 
                         // Append macro info if provided.
                         if (!String.IsNullOrEmpty(control.Macro))

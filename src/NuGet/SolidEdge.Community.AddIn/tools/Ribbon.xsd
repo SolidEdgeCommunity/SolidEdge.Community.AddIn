@@ -14,14 +14,20 @@
   <xs:simpleType name="ST_String">
     <xs:annotation>
       <xs:documentation>
-        Specifies a string argument.
-        String length is limited to 1024 characters.
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
       <xs:maxLength value="1024"/>
     </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_ImageId">
+    <xs:annotation>
+      <xs:documentation>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
   </xs:simpleType>
 
   <xs:simpleType name="ST_ButtonSize">
@@ -33,6 +39,18 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="normal"/>
       <xs:enumeration value="large"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_UniqueID">
+    <xs:annotation>
+      <xs:documentation>
+        Specifies a unique ID.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:ID">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="1024"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -60,7 +78,7 @@
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="enabled" type="xs:boolean" use="optional" />
-    <xs:attribute name="imageId" type="xs:int" use="optional" />
+    <xs:attribute name="imageId" type="ST_ImageId" use="optional" />
   </xs:complexType>
 
   <xs:complexType name="CT_Button">
@@ -73,6 +91,7 @@
       <xs:extension base="CT_Control">
         <xs:attribute name="showImage" type="xs:boolean" use="optional" />
         <xs:attribute name="showLabel" type="xs:boolean" use="optional" />
+        <xs:attribute name="dropDownGroup" type="xs:string" use="optional" />
         <xs:attribute name="size" type="ST_ButtonSize" use="optional" />
         <xs:attribute name="macro" type="xs:string" use="optional" />
         <xs:attribute name="macroParameters" type="xs:string" use="optional" />
@@ -149,7 +168,7 @@
         </xs:choice>
       </xs:sequence>
     </xs:sequence>
-    <xs:attribute name="name" type="ST_String" use="required" />
+    <xs:attribute name="name" type="ST_UniqueID" use="required" />
   </xs:complexType>
 
   <xs:complexType name="CT_Tab">
@@ -169,9 +188,9 @@
         </xs:element>
       </xs:choice>
     </xs:sequence>
-    <xs:attribute name="name" type="ST_String" use="required" />
+    <xs:attribute name="name" type="ST_UniqueID" use="required" />
   </xs:complexType>
-
+  
   <xs:complexType name="CT_Ribbon">
     <xs:annotation>
       <xs:documentation>

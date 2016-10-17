@@ -12,7 +12,7 @@ namespace TestAddIn
     public class MyRibbon : Ribbon
     {
         const string _embeddedResourceName = "TestAddIn.Ribbon.xml";
-        private RibbonControl _buttonOpenGlBoxes;
+        //private RibbonControl _buttonOpenGlBoxes;
 
         public MyRibbon()
             : base()
@@ -27,6 +27,11 @@ namespace TestAddIn
 
         public override void OnControlClick(RibbonControl control)
         {
+            var application = MyAddIn.Instance.Application;
+            var documents = application.Documents;
+            var document = (SolidEdgeFramework.SolidEdgeDocument)documents.Add("SolidEdge.PartDocument");
+            document.Close();
+            documents.Open(@"C:\Temp\test.par");
         }
 
         void _buttonOpenGlBoxes_Click(RibbonControl control)

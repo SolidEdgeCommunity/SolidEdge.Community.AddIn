@@ -21,6 +21,11 @@ namespace SolidEdgeCommunity.AddIn
         private EdgeBarControl _control;
         private bool _visible = true;
 
+        internal EdgeBarPage(int hWnd, EdgeBarControl control)
+            : this(new IntPtr(hWnd), null, control)
+        {
+        }
+
         internal EdgeBarPage(int hWnd, SolidEdgeFramework.SolidEdgeDocument document, EdgeBarControl control)
             : this(new IntPtr(hWnd), document, control)
         {
@@ -37,7 +42,7 @@ namespace SolidEdgeCommunity.AddIn
             // Reparent child control to this hWnd.
             SetParent(_control.Handle, this.Handle);
 
-            // Show the child control and maximize it to fill the entire EdgeBarPage reigon.
+            // Show the child control and maximize it to fill the entire EdgeBarPage region.
             ShowWindow(_control.Handle, 3 /* SHOWMAXIMIZED */);
         }
 

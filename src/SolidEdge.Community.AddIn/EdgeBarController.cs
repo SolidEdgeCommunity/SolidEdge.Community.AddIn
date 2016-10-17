@@ -12,8 +12,7 @@ namespace SolidEdgeCommunity.AddIn
     /// EdgeBar controller class.
     /// </summary>
     public sealed class EdgeBarController : IDisposable,
-        SolidEdgeFramework.ISEAddInEdgeBarEvents
-        //SolidEdgeFramework.ISEAddInEdgeBarEventsEx
+        SolidEdgeFramework.ISEAddInEdgeBarEventsEx
     {
         private SolidEdgeCommunity.AddIn.SolidEdgeAddIn _addIn;
         private Dictionary<IConnectionPoint, int> _connectionPointDictionary = new Dictionary<IConnectionPoint, int>();
@@ -25,18 +24,7 @@ namespace SolidEdgeCommunity.AddIn
             if (addIn == null) throw new ArgumentNullException("addIn");
             _addIn = addIn;
 
-            AdviseSink<SolidEdgeFramework.ISEAddInEdgeBarEvents>(_addIn.AddInEx);
-
-            //if (_addIn.SolidEdgeVersion.Major <= 105)
-            //{
-            //    // Solid Edge ST5 or lower.
-            //    AdviseSink<SolidEdgeFramework.ISEAddInEdgeBarEvents>(_addIn.AddInEx);
-            //}
-            //else
-            //{
-            //    // Solid Edge ST6 or higher.
-            //    AdviseSink<SolidEdgeFramework.ISEAddInEdgeBarEventsEx>(_addIn.AddInEx);
-            //}
+            AdviseSink<SolidEdgeFramework.ISEAddInEdgeBarEventsEx>(_addIn.AddInEx2.AddInEdgeBarEvents);
         }
 
         /// <summary>
@@ -47,37 +35,35 @@ namespace SolidEdgeCommunity.AddIn
             Dispose(false);
         }
 
-        #region SolidEdgeFramework.ISEAddInEdgeBarEvents implementation
+        #region SolidEdgeFramework.ISEAddInEdgeBarEventsEx implementation
 
-        void SolidEdgeFramework.ISEAddInEdgeBarEvents.AddPage(object theDocument)
+        void SolidEdgeFramework.ISEAddInEdgeBarEventsEx.AddPage(object theDocument)
         {
-            // Forward call to ISEAddInEdgeBarEventsEx implementation.
-            //((SolidEdgeFramework.ISEAddInEdgeBarEventsEx)this).AddPage(theDocument);
-
-            if (theDocument == null) return;
-
             var document = theDocument as SolidEdgeFramework.SolidEdgeDocument;
 
             if (document != null)
             {
                 _addIn.OnCreateEdgeBarPage(this, document);
             }
+
+            //if (document == null)
+            //{
+            //    _addIn.OnCreateEdgeBarPage(this);
+            //}
+            //else
+            //{
+            //    _addIn.OnCreateEdgeBarPage(this, document);
+            //}
         }
 
-        void SolidEdgeFramework.ISEAddInEdgeBarEvents.IsPageDisplayable(object theDocument, string EnvironmentCatID, out bool vbIsPageDisplayable)
+        void SolidEdgeFramework.ISEAddInEdgeBarEventsEx.IsPageDisplayable(object theDocument, string EnvironmentCatID, out bool vbIsPageDisplayable)
         {
-            // Forward call to ISEAddInEdgeBarEventsEx implementation.
-            //((SolidEdgeFramework.ISEAddInEdgeBarEventsEx)this).IsPageDisplayable(theDocument, EnvironmentCatID, out vbIsPageDisplayable);
-
             vbIsPageDisplayable = true;
         }
 
-        void SolidEdgeFramework.ISEAddInEdgeBarEvents.RemovePage(object theDocument)
+        void SolidEdgeFramework.ISEAddInEdgeBarEventsEx.RemovePage(object theDocument)
         {
-            // Forward call to ISEAddInEdgeBarEventsEx implementation.
-            //((SolidEdgeFramework.ISEAddInEdgeBarEventsEx)this).RemovePage(theDocument);
-
-            var edgeBarPages = _edgeBarPages.Where(x => x.Document.Equals(theDocument)).ToArray();
+            var edgeBarPages = _edgeBarPages.Where(x => object.Equals(x.Document, theDocument)).ToArray();
 
             foreach (var edgeBarPage in edgeBarPages)
             {
@@ -105,55 +91,6 @@ namespace SolidEdgeCommunity.AddIn
 
         #endregion
 
-        //#region SolidEdgeFramework.ISEAddInEdgeBarEventsEx implementation
-
-        //void SolidEdgeFramework.ISEAddInEdgeBarEventsEx.AddPage(object theDocument)
-        //{
-        //    if (theDocument == null) return;
-
-        //    var document = theDocument as SolidEdgeFramework.SolidEdgeDocument;
-
-        //    if (document != null)
-        //    {
-        //        _addIn.OnCreateEdgeBarPage(this, document);
-        //    }
-        //}
-
-        //void SolidEdgeFramework.ISEAddInEdgeBarEventsEx.IsPageDisplayable(object theDocument, string EnvironmentCatID, out bool vbIsPageDisplayable)
-        //{
-        //    vbIsPageDisplayable = true;
-        //}
-
-        //void SolidEdgeFramework.ISEAddInEdgeBarEventsEx.RemovePage(object theDocument)
-        //{
-        //    var edgeBarPages = _edgeBarPages.Where(x => x.Document.Equals(theDocument)).ToArray();
-
-        //    foreach (var edgeBarPage in edgeBarPages)
-        //    {
-        //        _edgeBarPages.Remove(edgeBarPage);
-
-        //        try
-        //        {
-        //            int hWnd = edgeBarPage.Handle.ToInt32();
-
-        //            try
-        //            {
-        //                _addIn.EdgeBarEx.RemovePage(theDocument, hWnd, 0);
-        //            }
-        //            catch
-        //            {
-        //            }
-
-        //            edgeBarPage.Dispose();
-        //        }
-        //        catch
-        //        {
-        //        }
-        //    }
-        //}
-
-        //#endregion
-
         #region Methods
 
         public void Add(SolidEdgeFramework.SolidEdgeDocument document, EdgeBarControl control, int imageId)
@@ -166,7 +103,9 @@ namespace SolidEdgeCommunity.AddIn
 
             if (_addIn.EdgeBarEx2 != null)
             {
-                hWnd = _addIn.EdgeBarEx2.AddPageEx(document, _addIn.NativeResourcesDllPath, imageId, control.ToolTip, options);
+                //hWnd = _addIn.EdgeBarEx2.AddPageEx(document, _addIn.NativeResourcesDllPath, imageId, control.ToolTip, options);
+                var index = _edgeBarPages.Count + 1;
+                hWnd = _addIn.EdgeBarEx2.AddPageEx2(document, _addIn.NativeResourcesDllPath, index, imageId, control.ToolTip, control.Title, control.Caption, options);
             }
             else if (_addIn.EdgeBarEx != null)
             {
@@ -178,6 +117,12 @@ namespace SolidEdgeCommunity.AddIn
                 var edgeBarPage = new EdgeBarPage(hWnd, document, control);
                 _edgeBarPages.Add(edgeBarPage);
             }
+        }
+
+        public void Add<TEdgeBarControl>(int imageId) where TEdgeBarControl : EdgeBarControl
+        {
+            TEdgeBarControl control = Activator.CreateInstance<TEdgeBarControl>();
+            Add(null, control, imageId);
         }
 
         public void Add<TEdgeBarControl>(SolidEdgeFramework.SolidEdgeDocument document, int imageId) where TEdgeBarControl : EdgeBarControl

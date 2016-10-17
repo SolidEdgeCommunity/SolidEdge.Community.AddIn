@@ -100,6 +100,7 @@ namespace SolidEdgeCommunity.AddIn
                         var controlType = control.Name.LocalName;
                         var controlId = control.Attribute("id");
                         var controlLabel = control.Attribute("label");
+                        var controlDropDownGroup = control.Attribute("dropDownGroup");
                         var controlScreentip = control.Attribute("screentip");
                         var controlSupertip = control.Attribute("supertip");
                         var controlImageId = control.Attribute("imageId");
@@ -123,6 +124,12 @@ namespace SolidEdgeCommunity.AddIn
                                 {
                                     ribbonButton.TryParseSize(buttonSize.Value);
                                 }
+
+                                if (controlDropDownGroup != null)
+                                {
+                                    ribbonButton.DropDownGroup = controlDropDownGroup.Value;
+                                }
+
                                 ribbonControl = ribbonButton;
                             }
                             else if (controlType.Equals("checkBox", StringComparison.OrdinalIgnoreCase))

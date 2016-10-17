@@ -2,6 +2,10 @@
 
 <ribbon xmlns="http://github.com/SolidEdgeCommunity/SolidEdge/Ribbon">
   <tab name="CodePlex">
+    <group name="group0">
+      <button id="100" size="large" dropDownGroup="Save" label="Save 1" screentip="Box Screentip" supertip="Box Supertip" imageId="100" showLabel="true" />
+      <button id="101" size="large" dropDownGroup="Save" label="Save 2" screentip="Box Screentip" supertip="Box Supertip" imageId="107" showLabel="true" />
+    </group>
     <group name="group1">
       <button id="0" size="normal" label="Save" screentip="Save Screentip" supertip="Save Supertip" imageId="109" showLabel="false" />
       <button id="1" size="normal" label="Folder" screentip="Folder Screentip" supertip="Folder Supertip" imageId="103" />

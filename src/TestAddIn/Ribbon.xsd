@@ -3,7 +3,7 @@
 <!--
 	Schema definition for Solid Edge Ribbon Extensibility
 
-  https://github.com/SolidEdgeCommunity/SolidEdge.Community
+  https://github.com/SolidEdgeCommunity/SolidEdge.Community.AddIn
 -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -91,6 +91,7 @@
       <xs:extension base="CT_Control">
         <xs:attribute name="showImage" type="xs:boolean" use="optional" />
         <xs:attribute name="showLabel" type="xs:boolean" use="optional" />
+        <xs:attribute name="dropDownGroup" type="xs:string" use="optional" />
         <xs:attribute name="size" type="ST_ButtonSize" use="optional" />
         <xs:attribute name="macro" type="xs:string" use="optional" />
         <xs:attribute name="macroParameters" type="xs:string" use="optional" />
@@ -189,7 +190,7 @@
     </xs:sequence>
     <xs:attribute name="name" type="ST_UniqueID" use="required" />
   </xs:complexType>
-  
+
   <xs:complexType name="CT_Ribbon">
     <xs:annotation>
       <xs:documentation>
