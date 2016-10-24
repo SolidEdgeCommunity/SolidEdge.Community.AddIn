@@ -109,6 +109,7 @@ namespace SolidEdgeCommunity.AddIn
                         var controlMacroParameters = control.Attribute("macroParameters");
                         var controlShowImage = control.Attribute("showImage");
                         var controlShowLabel = control.Attribute("showLabel");
+                        var controlWebHelpUrl = control.Attribute("webHelpUrl");
 
                         RibbonControl ribbonControl = null;
                         int commandId = -1;
@@ -178,6 +179,11 @@ namespace SolidEdgeCommunity.AddIn
                                 if (controlShowLabel != null)
                                 {
                                     ribbonControl.TryParseShowLabel(controlShowLabel.Value);
+                                }
+
+                                if (controlWebHelpUrl != null)
+                                {
+                                    ribbonControl.WebHelpURL = controlWebHelpUrl.Value;
                                 }
 
                                 ribbonGroup.AddControl(ribbonControl);

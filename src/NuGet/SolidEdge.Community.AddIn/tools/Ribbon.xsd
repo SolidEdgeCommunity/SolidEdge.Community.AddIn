@@ -3,7 +3,7 @@
 <!--
 	Schema definition for Solid Edge Ribbon Extensibility
 
-  https://github.com/SolidEdgeCommunity/SolidEdge.Community.AddIn
+  https://github.com/SolidEdgeCommunity/SolidEdge.Community
 -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"

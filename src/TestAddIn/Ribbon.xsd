@@ -79,6 +79,7 @@
     </xs:attribute>
     <xs:attribute name="enabled" type="xs:boolean" use="optional" />
     <xs:attribute name="imageId" type="ST_ImageId" use="optional" />
+    <xs:attribute name="webHelpUrl" type="ST_String" use="optional" />
   </xs:complexType>
 
   <xs:complexType name="CT_Button">
