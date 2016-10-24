@@ -55,7 +55,7 @@ namespace TestAddIn
         public override void OnCreateEdgeBarPage(EdgeBarController controller, SolidEdgeFramework.SolidEdgeDocument document)
         {
             controller.Add<MyEdgeBarControl>(document, 1);
-            controller.Add<MyEdgeBarControl2>(document, 1);
+            //controller.Add<MyEdgeBarControl2>(document, 1);
         }
 
         #region Registration functions
@@ -72,7 +72,7 @@ namespace TestAddIn
                 var settings = new RegistrationSettings(t);
 
                 settings.Enabled = true;
-                settings.Environments.Add(SolidEdgeSDK.EnvironmentCategories.Application);
+                //settings.Environments.Add(SolidEdgeSDK.EnvironmentCategories.Application);
                 settings.Environments.Add(SolidEdgeSDK.EnvironmentCategories.AllDocumentEnvrionments);
 
                 // See http://msdn.microsoft.com/en-us/goglobal/bb964664.aspx for LCID details.

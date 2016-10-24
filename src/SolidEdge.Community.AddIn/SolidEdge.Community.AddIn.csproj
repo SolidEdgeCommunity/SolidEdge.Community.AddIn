@@ -51,7 +51,6 @@
     </Compile>
     <Compile Include="EdgeBarController.cs" />
     <Compile Include="EdgeBarPage.cs" />
-    <Compile Include="EdgeBarPageAttribute.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="NativeResourceAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

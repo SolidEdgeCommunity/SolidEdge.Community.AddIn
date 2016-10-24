@@ -44,23 +44,23 @@ namespace SolidEdgeCommunity.AddIn
             get { return _edgeBarPage.Document; }
         }
 
-        /// <summary>
-        /// The string to be used in the EdgeBarPage caption.
-        /// </summary>
-        [Browsable(true)]
-        public string Caption { get; set; }
+        ///// <summary>
+        ///// The string to be used in the EdgeBarPage caption.
+        ///// </summary>
+        //[Browsable(true)]
+        //public string Caption { get; set; }
 
-        /// <summary>
-        /// The native resource id of the image to be displayed on the tab.
-        /// </summary>
-        [Browsable(true)]
-        public int NativeResourceId { get; set; }
+        ///// <summary>
+        ///// The native resource id of the image to be displayed on the tab.
+        ///// </summary>
+        //[Browsable(true)]
+        //public int NativeResourceId { get; set; }
 
-        /// <summary>
-        /// The string to be used in the EdgeBarPage title.
-        /// </summary>
-        [Browsable(true)]
-        public string Title { get; set; }
+        ///// <summary>
+        ///// The string to be used in the EdgeBarPage title.
+        ///// </summary>
+        //[Browsable(true)]
+        //public string Title { get; set; }
 
         /// <summary>
         /// The string to be used in the EdgeBarPage tooltip.
