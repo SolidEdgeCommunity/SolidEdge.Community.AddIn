@@ -215,7 +215,7 @@ pip-log.txt
 .mr.developer.cfg
 
 # Added by Jason Newell
-.exe
-.dll
+*.exe
+*.dll
 /.vs
 /src/.vs
