@@ -1,0 +1,11 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
+  <Target Name="MyPostBuild" AfterTargets="PostBuildEvent">
+    <PropertyGroup>
+      <PostBuildEvent>$(SolutionDir)\EmbedNativeResources\bin\$(Configuration)\EmbedNativeResources.exe $(ProjectDir) $(TargetPath)</PostBuildEvent>
+    </PropertyGroup>
+    
+    <Message Text="Executing: $(PostBuildEvent)" Importance="High" />
+    
+    <Exec Command="$(PostBuildEvent)" />
+  </Target>
+</Project>

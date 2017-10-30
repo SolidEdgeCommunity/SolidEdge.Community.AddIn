@@ -27,11 +27,10 @@ namespace TestAddIn
 
         public override void OnControlClick(RibbonControl control)
         {
-            var application = MyAddIn.Instance.Application;
-            var documents = application.Documents;
-            var document = (SolidEdgeFramework.SolidEdgeDocument)documents.Add("SolidEdge.PartDocument");
-            document.Close();
-            documents.Open(@"C:\Temp\test.par");
+            //var application = MyAddIn.Instance.Application;
+            //var documents = application.Documents;
+            //var document = (SolidEdgeFramework.SolidEdgeDocument)documents.Add("SolidEdge.PartDocument");
+            //document.Close();
         }
 
         void _buttonOpenGlBoxes_Click(RibbonControl control)

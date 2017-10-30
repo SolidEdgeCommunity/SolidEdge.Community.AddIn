@@ -1,81 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3BFB94CD-C10E-4E0F-8DC5-98259E6E1B77}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SolidEdge.Community.AddIn</RootNamespace>
-    <AssemblyName>SolidEdge.Community.AddIn</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>NET40</TargetFramework>
+    <Version>110.0.0</Version>
+    <Authors>Jason Newell</Authors>
+    <Company>Jason Newell</Company>
+    <Description>Community provided package for developing Solid Edge AddIns.</Description>
+    <PackageIconUrl>https://raw.githubusercontent.com/SolidEdgeCommunity/SolidEdge.Community/master/media/icon.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/SolidEdgeCommunity/SolidEdge.Community</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/SolidEdgeCommunity/SolidEdge.Community/blob/master/LICENSE.md</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/SolidEdgeCommunity/SolidEdge.Community.AddIn.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\net40\SolidEdge.Community.AddIn.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\SolidEdge.Community.AddIn.xml</DocumentationFile>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Interop.SolidEdge, Version=109.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Interop.SolidEdge.109.0.0\lib\net40\Interop.SolidEdge.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
+    <None Remove="build\SolidEdge.Community.AddIn.targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Interop.SolidEdge" Version="[110.0.0, 111.0.0)">
+      <PrivateAssets>None</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="EdgeBarControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="EdgeBarController.cs" />
-    <Compile Include="EdgeBarPage.cs" />
-    <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="NativeResourceAttribute.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrationSettings.cs" />
-    <Compile Include="Ribbon.cs" />
-    <Compile Include="RibbonControl.cs" />
-    <Compile Include="RibbonController.cs" />
-    <Compile Include="RibbonGroup.cs" />
-    <Compile Include="RibbonTab.cs" />
-    <Compile Include="SolidEdgeAddIn.cs" />
-    <Compile Include="ViewOverlay.cs" />
-    <Compile Include="ViewOverlayController.cs" />
+    <Content Include="build\**\*">
+      <Pack>true</Pack>
+      <PackagePath>build\</PackagePath>
+    </Content>
+    <Content Include="tools\**\*">
+      <Pack>true</Pack>
+      <PackagePath>tools\</PackagePath>
+    </Content>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Notes.txt" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
+  <Import Project="SolidEdge.Community.AddIn.targets" />
+  
 </Project>

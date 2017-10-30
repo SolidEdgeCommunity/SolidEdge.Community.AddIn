@@ -25,6 +25,8 @@ function RegisterAddIn
         $al = "/u " + '"' + "$($assembly)" + '"'
     }
 
+	#Resarch RegisterAssembly UnregisterAssembly
+
     #http://blog.coretech.dk/rja/capture-output-from-command-line-tools-with-powershell/
     Write-Host "Executing: $($regasm) $($al)"
     Start-Process -FilePath $regasm -verb runas -ArgumentList $al | Wait-Process

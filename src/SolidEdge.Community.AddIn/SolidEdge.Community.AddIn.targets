@@ -1,0 +1,16 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
+  <Target Name="AfterReleaseBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Message Text="NuGetPackageRoot: $(NuGetPackageRoot)" Importance="High" />
+    <Message Text="NuGetProjectStyle: $(NuGetProjectStyle)" Importance="High" />
+    <Message Text="NuGetToolVersion: $(NuGetToolVersion)" Importance="High" />
+    <Message Text="ProjectDir: $(ProjectDir)" Importance="High" />
+    <Message Text="SolutionDir: $(SolutionDir)" Importance="High" />
+    <Message Text="TargetFramework: $(TargetFramework)" Importance="High" />
+
+    <ItemGroup>
+      <ToolsFolderFiles Include="$(SolutionDir)EmbedNativeResources\bin\Release\*.exe" />
+    </ItemGroup>
+    
+    <Copy SourceFiles="@(ToolsFolderFiles)" DestinationFolder="$(ProjectDir)tools\$(TargetFramework)" />
+  </Target>
+</Project>

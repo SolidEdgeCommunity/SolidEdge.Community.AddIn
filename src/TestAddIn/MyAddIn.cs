@@ -26,7 +26,7 @@ namespace TestAddIn
             // If you makes changes to your ribbon, be sure to increment the GuiVersion. That makes bFirstTime = true
             // next time Solid Edge is started. bFirstTime is used to setup the ribbon so if you make a change but don't
             // see the changes, that could be why
-            AddInEx.GuiVersion = 2;
+            AddInEx.GuiVersion = 1;
 
             // Put your custom OnConnection code here.
             var applicationEvents = (SolidEdgeFramework.ISEApplicationEvents_Event)application.ApplicationEvents;
